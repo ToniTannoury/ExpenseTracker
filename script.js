@@ -1,6 +1,6 @@
 $(document).ready(function() {
   let expenses = []
-  let savedExpenses = []
+
   $('#addExpense').on('click', function() {
     let expenseName = $('#expenseName').val()
     let expenseAmount = parseFloat($('#expenseAmount').val())
@@ -55,8 +55,11 @@ $(document).ready(function() {
   })
 
   function saveExpenses() {
-    savedExpenses.push(...expenses)
-    if (expenses.length === 0) {
+    let spentOn = []
+    spentOn.push(...expenses)
+
+    
+    if (spentOn.length === 0) {
       alert('There are no expenses to save.')
       return
     }
@@ -66,45 +69,26 @@ $(document).ready(function() {
   
     updateTotalExpenses(0)
   
-    let spentOn = savedExpenses
+    
     for (let i = 0; i < spentOn.length; i++) {
       let savedExpense = spentOn[i]
       let listItem = '<li>' + savedExpense.name + ': $' + savedExpense.amount.toFixed(2) + ' (Created at: ' + savedExpense.created_at + ')</li>'
       $('#savedExpenseList').append(listItem)
     }
     spentOn = []
-    console.log(savedExpenses)
+   
     alert('Expenses saved successfully!')
   }
 
-  $('#showSavedLists').on('click', function() {
-    displaySavedLists()
+  $('#showSavedExpenses').on('click', function() {
+    displaySavedExpenses()
   })
 
   $('.close').on('click', function() {
     $('#modal').css('display', 'none')
   })
 
-  function displaySavedLists() {
-   
-  
-    if (savedExpenses.length === 0) {
-      alert('There are no saved lists to display.')
-      return
-    }
+  function displaySavedExpenses() {
     $('#modal').css('display', 'block')
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 })

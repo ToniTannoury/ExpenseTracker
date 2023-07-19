@@ -52,7 +52,7 @@ tfoot td {
   margin-top: 20px;
   display: flex;
 }
-#saveExpenses, #showSavedLists , .deleteExpense{
+#saveExpenses, #showSavedExpenses , .deleteExpense{
  border-radius: 10%;
 }
 
@@ -75,7 +75,7 @@ tfoot td {
   width: 80%;
 }
 
-#modal[style="display: block;"] + #showSavedLists {
+#modal[style="display: block;"] + #showSavedExpenses {
   display: none;
 }
 .close {
