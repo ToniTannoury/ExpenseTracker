@@ -64,18 +64,35 @@ $(document).ready(function() {
   
     $('#expenseTable tbody').empty()
   
-    // Reset total expenses to 0
     updateTotalExpenses(0)
   
     let spentOn = savedExpenses
     for (let i = 0; i < spentOn.length; i++) {
       let savedExpense = spentOn[i]
       let listItem = '<li>' + savedExpense.name + ': $' + savedExpense.amount.toFixed(2) + ' (Created at: ' + savedExpense.created_at + ')</li>'
-      $('#saved-expense-list').append(listItem)
+      $('#savedExpenseList').append(listItem)
     }
     spentOn = []
     console.log(savedExpenses)
     alert('Expenses saved successfully!')
+  }
+
+  $('#showSavedLists').on('click', function() {
+    displaySavedLists()
+  })
+
+  $('.close').on('click', function() {
+    $('#modal').css('display', 'none')
+  })
+
+  function displaySavedLists() {
+   
+  
+    if (savedExpenses.length === 0) {
+      alert('There are no saved lists to display.')
+      return
+    }
+    $('#modal').css('display', 'block')
   }
 
 
