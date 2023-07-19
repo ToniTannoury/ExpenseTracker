@@ -1,3 +1,8 @@
+body{
+  background-color:#13ECAE ;
+  color:  #ECAE13;
+}
+
 #expenseTracker{
   max-width: 600px;
   margin: 0 auto;
@@ -15,11 +20,18 @@ input[type="number"] {
 }
 
 button {
+  color:  #ECAE13;
   display: block;
   margin: auto;
   margin-bottom: 10px;
   padding: 5px 40px;
   border-radius: 50%;
+  background-color: #AE13EC;
+  border: 1px solid transparent
+}
+button:hover {
+  background-color: #ECAE13;
+  color:  #AE13EC;
 }
 
 table {
@@ -28,7 +40,7 @@ table {
 }
 th,
 td {
-  border: 1px solid #ccc;
+  border: 1px solid #ECAE13;
   padding: 8px;
 }
 
@@ -43,6 +55,7 @@ tfoot td {
 #saveExpenses, #showSavedLists , .deleteExpense{
  border-radius: 10%;
 }
+
 .modal {
   display: none;
   position: fixed;
