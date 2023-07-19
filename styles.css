@@ -35,3 +35,11 @@ td {
 tfoot td {
   font-weight: bold;
 }
+
+.buttonContainer{
+  margin-top: 20px;
+  display: flex;
+}
+#saveExpenses, #showSavedLists , .deleteExpense{
+ border-radius: 10%;
+}
