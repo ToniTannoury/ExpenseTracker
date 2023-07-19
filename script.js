@@ -17,7 +17,9 @@ $(document).ready(function() {
     $('#expenseName').val('')
     $('#expenseAmount').val('')
     updateExpenseTable()
+    updateTotalExpenses()
   })
+
   function updateExpenseTable() {
     let tableBody = $('#expenseTable tbody')
     tableBody.empty()
@@ -32,7 +34,13 @@ $(document).ready(function() {
       tableBody.append(row)
     }
   }
+ function updateTotalExpenses() {
+    let total = expenses.reduce(function(sum, expense) {
+      return sum + expense.amount
+    }, 0)
 
+    $('#totalExpenses').text('$' + total.toFixed(2))
+  }
 
 
 
