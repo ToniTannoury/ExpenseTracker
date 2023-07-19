@@ -20,6 +20,13 @@ $(document).ready(function() {
     updateTotalExpenses()
   })
 
+  $(document).on('click', '.deleteExpense', function() {
+    let index = $(this).data('index')
+    expenses.splice(index, 1)
+    updateExpenseTable()
+    updateTotalExpenses()
+  })
+
   function updateExpenseTable() {
     let tableBody = $('#expenseTable tbody')
     tableBody.empty()
